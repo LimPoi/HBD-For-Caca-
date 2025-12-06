@@ -15,16 +15,44 @@
         h1 {
             color: #ff69b4;
         }
-        img {
-            max-width: 300px;
-            height: auto;
+        .slideshow {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            width: 1200px; /* 4 gambar x 300px */
+            animation: slide 12s infinite; /* Geser setiap 3 detik per gambar, total 12 detik */
+        }
+        .slides img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-300px); }
+            50% { transform: translateX(-600px); }
+            75% { transform: translateX(-900px); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
 <body>
-    <h1>Selamat Ulang Tahun, Kamu!</h1>
+    <h1>Selamat Ulang Tahun, Nama Teman!</h1>
     <p>Semoga hari ini penuh kebahagiaan dan tahun depan lebih baik lagi. 🎉</p>
-    <img src="https://via.placeholder.com/300x200?text=Happy+Birthday" alt="Kue Ulang Tahun">
-    <p>Dari: Bukan Alim</p>
+    <div class="slideshow">
+        <div class="slides">
+            <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Foto 1">
+            <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Foto 2">
+            <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Foto 3">
+            <img src="https://via.placeholder.com/300x200?text=Foto+4" alt="Foto 4">
+        </div>
+    </div>
+    <p>Dari: Namamu</p>
 </body>
 </html>
